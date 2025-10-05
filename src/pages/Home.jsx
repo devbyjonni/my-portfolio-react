@@ -1,13 +1,12 @@
-export function Home() {
+import React from "react";
+
+function Home() {
   return (
-    <section className="hero-section d-flex align-items-center">
-      <div className="container">
-        <h1 className="hero-title">Hi there! I’m Jonni</h1>
-        <p className="hero-subtitle">
-          A developer passionate about building intuitive, well-crafted digital experiences — specializing in
-          <strong> iOS</strong>, modern <strong>web</strong>, and <strong>backend development</strong>.
-        </p>
-      </div>
+    <section style={{ textAlign: "center", marginTop: "2rem" }}>
+      <h2>Welcome!</h2>
+      <p>This is the home page for your React portfolio.</p>
     </section>
   );
 }
+
+export default Home;

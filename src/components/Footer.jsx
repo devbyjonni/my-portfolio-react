@@ -1,27 +1,11 @@
-export function Footer() {
+import React from "react";
+
+function Footer() {
   return (
-    <footer className="footer py-4 mt-5">
-      <div className="container d-flex flex-wrap justify-content-between align-items-center">
-        <p className="mb-0 text-muted">
-          © 2025 Jonni Åkesson. All rights reserved.
-        </p>
-        <div className="d-flex align-items-center gap-3">
-          <a
-            href="https://github.com/devbyjonni"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-github fs-5 text-dark"></i>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jonniakesson/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i className="fa-brands fa-linkedin fs-5 text-dark"></i>
-          </a>
-        </div>
-      </div>
+    <footer style={{ textAlign: "center", padding: "1rem" }}>
+      <p>© 2025 Jonni Åkesson. All rights reserved.</p>
     </footer>
   );
 }
+
+export default Footer;
