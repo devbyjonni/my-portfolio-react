@@ -1,11 +1,18 @@
 import React from "react";
 
-function Footer() {
+export default function Hero() {
   return (
-    <footer style={{ textAlign: "center", padding: "1rem" }}>
-      <p>© 2025 Jonni Åkesson. All rights reserved.</p>
-    </footer>
+    <section className="hero-section d-flex align-items-center">
+      <div className="container">
+        <h1 className="hero-title">
+          Hi there! <br /> I’m Jonni
+        </h1>
+        <p className="hero-subtitle">
+          A developer passionate about building intuitive, well-crafted digital
+          experiences — specializing in <strong>iOS</strong>, modern{" "}
+          <strong>web</strong>, and <strong>backend development</strong>.
+        </p>
+      </div>
+    </section>
   );
 }
-
-export default Footer;

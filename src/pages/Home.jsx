@@ -1,12 +1,16 @@
 import React from "react";
+import Hero from "../components/Hero";
+import About from "../components/About";
+import Projects from "../components/Projects";
+import Skills from "../components/Skills";
 
-function Home() {
+export default function Home() {
   return (
-    <section style={{ textAlign: "center", marginTop: "2rem" }}>
-      <h2>Welcome!</h2>
-      <p>This is the home page for your React portfolio.</p>
-    </section>
+    <>
+      <Hero />
+      <About />
+      <Projects />
+      <Skills />
+    </>
   );
 }
-
-export default Home;
