@@ -1,16 +1,90 @@
-# React + Vite
+# My Portfolio (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive developer portfolio built with React, Vite, and Bootstrap 5.
+This is the React-based version of my original Bootstrap theme, now featuring component-based structure, smooth scrolling, and system dark mode.
 
-Currently, two official plugins are available:
+Live Demo: https://devbyjonni.github.io/my-portfolio-react/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- ⚛️ React + Vite for fast builds and hot reloads
+- 🎨 Bootstrap 5 layout with custom theme tokens
+- 🌗 System dark mode using CSS variables
+- 🧭 Responsive navbar with mobile collapse
+- 📜 Smooth scrolling to sections (#home, #about, etc.)
+- 🧱 Component-based structure for easy extension
+- 📦 Deployed via GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🗂 Folder Structure
 
-## Expanding the ESLint configuration
+```bash
+my-portfolio-react/
+├── public/
+│   ├── 404.html
+│   └── _redirects
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── ScrollToHashElement.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── ProjectDetail.jsx
+│   ├── styles/
+│   │   └── theme.css
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+└── vite.config.js
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Development
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Run locally
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Deploy to GitHub Pages
+
+```bash
+npm run deploy
+```
+
+## 🧩 Tech Stack
+
+| Category         | Technology                                  |
+| ---------------- | ------------------------------------------- |
+| Frontend         | React 19, JSX, Vite                         |
+| Styling          | Bootstrap 5, Custom CSS (theme tokens)      |
+| Icons            | Font Awesome 6                              |
+| Deployment       | GitHub Pages (via gh-pages)                 |
+| Routing & Scroll | React Router 7 + Custom ScrollToHashElement |
+| Build Tools      | Vite 7, ESLint 9                            |
+
+## 🏷 Version
+
+v1.0.0 — React version with smooth scroll, responsive navbar, and full theme integration.
+
+## 🧭 Next Steps
+
+- 🔹 Convert ProjectDetail into a dynamic route (e.g., /project/:id)
+- 🔹 Store project data in a JSON file and render it dynamically
+- 🔹 Add an active link state in the navbar for better UX
+- 🔹 Implement scroll-to-top on route change
+- 🔹 Optimize image loading and replace placeholders with real assets
+- 🔹 Extend with React Context for theme or layout state (optional)
