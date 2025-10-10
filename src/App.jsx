@@ -1,3 +1,4 @@
+import ScrollToHashElement from "./components/ScrollToHashElement";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -9,6 +10,9 @@ function App() {
     <>
       <Header />
       <main>
+        {/* Enables smooth scrolling to in-page anchors (#about, #projects, etc.) */}
+        <ScrollToHashElement />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<ProjectDetail />} />

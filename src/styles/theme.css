@@ -1,0 +1,613 @@
+/* =========================================================
+   THEME TOKENS (safe + minimal)
+   → Change your brand colors in one place
+========================================================= */
+:root {
+  /* Accent colors (update these to change your entire theme) */
+  /* iOS Dev Blue #007aff */
+  /* iOS Dev Red #ff3b30 */
+  --primary: #007aff; /* Main accent (links, hover, buttons) */
+  --secondary: #555; /* Secondary neutral color */
+
+  /* Derived accents (auto-follow primary/secondary) */
+  --link-primary: var(--primary);
+  --link-secondary: var(--secondary);
+
+  /* Buttons follow accent system */
+  --button-primary: var(--primary);
+  --button-secondary: var(--secondary);
+  --button-hover-primary: var(--primary);
+  --button-hover-secondary: var(--secondary);
+  --hover-brightness: 1.1; /* 10% brighter for light mode */
+
+  /* Base surface + text */
+  --bg: #fff;
+  --text: #222;
+  --text-muted: #444;
+
+  /* Lines / outlines */
+  --border: #ccc;
+
+  /* Nav surface */
+  --nav-bg: var(--bg);
+}
+
+/* =========================================================
+   TEXT EMPHASIS
+   → Makes <strong> tags visually stand out
+========================================================= */
+strong {
+  color: #000; /* pure black for emphasis (light mode) */
+  font-weight: 600;
+}
+
+/* =========================================================
+   GLOBAL TYPOGRAPHY & SPACING
+========================================================= */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0.75em;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1.25em;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   TEXT LINKS (Scoped)
+   → Applies only to inline links in paragraphs or text blocks
+========================================================= */
+p a,
+.about-text a,
+.section-subtitle a {
+  color: var(--link-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+p a:hover,
+.about-text a:hover,
+.section-subtitle a:hover {
+  color: color-mix(in srgb, var(--link-primary) 80%, #000);
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  p a,
+  .about-text a,
+  .section-subtitle a {
+    color: var(--link-primary);
+  }
+
+  p a:hover,
+  .about-text a:hover,
+  .section-subtitle a:hover {
+    color: color-mix(in srgb, var(--link-primary) 70%, #fff);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: var(--link-primary);
+  }
+
+  a:hover {
+    color: color-mix(in srgb, var(--link-primary) 70%, #fff);
+  }
+}
+
+/* =========================================================
+   GLOBAL CONTAINER WIDTH
+========================================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* =========================================================
+   NAVBAR (Light Mode)
+========================================================= */
+.navbar {
+  background-color: var(--nav-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 1rem 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: var(--button-secondary) !important;
+  margin-right: 15px;
+  position: relative;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--link-primary) !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: var(--button-secondary) !important;
+  border-bottom: 2px solid var(--primary);
+}
+
+.fa-brands {
+  color: var(--button-secondary);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.fa-brands:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+/* Mobile hamburger icon */
+.navbar-toggler {
+  border: none !important;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.85)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero-section {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 0;
+  margin-top: -20px;
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  color: #111;
+  text-align: left;
+  margin-bottom: 20px;
+  max-width: 900px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: #666;
+  max-width: 800px;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================================
+   PROJECTS SECTION (Tabs + Cards)
+========================================================= */
+.projects-section {
+  background: none;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #111;
+}
+
+.section-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  max-width: 700px;
+  color: var(--secondary);
+}
+
+/* Tabs */
+.nav-tabs {
+  border: none;
+  gap: 1rem;
+}
+
+.nav-tabs .nav-link {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: var(--secondary);
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  padding: 10px 20px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+  color: var(--primary);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--button-secondary) !important;
+  border-bottom: 2px solid var(--primary);
+  font-weight: 600;
+  background: transparent !important;
+}
+
+/* Cards */
+.project-card {
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn {
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+/* Primary */
+.btn-primary {
+  background-color: var(--button-primary);
+  border: 1px solid var(--button-primary);
+  color: #fff;
+}
+
+.btn-primary i {
+  color: inherit;
+  transition: none !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover-primary);
+  border-color: var(--button-hover-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  /* ✨ subtle, token-driven hover nudge */
+  filter: brightness(var(--hover-brightness));
+}
+
+/* Outline */
+.btn-outline-secondary {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 1px solid var(--border);
+}
+
+.btn-outline-secondary i {
+  color: inherit;
+  transition: none !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary) 20%, #fff);
+  color: #000;
+  border-color: color-mix(in srgb, var(--secondary) 90%, #fff);
+  filter: brightness(var(--hover-brightness));
+  transform: translateY(-2px);
+}
+
+/* Disable icon-only hover */
+.btn i {
+  pointer-events: none;
+}
+
+/* =========================================================
+   SKILLS SECTION
+========================================================= */
+.skills-section {
+  background: none;
+}
+
+.skill-card {
+  min-width: 120px;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  color: var(--primary);
+}
+
+.skill-card i {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover i {
+  color: var(--primary);
+}
+
+.skill-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #111;
+  margin: 0;
+}
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+.about-section {
+  background: none;
+}
+
+.about-image {
+  background-color: #f7f7f7;
+  color: #aaa;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.about-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+}
+
+.about-text strong {
+  color: #111;
+}
+
+.about-section .btn {
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   FOOTER SECTION
+========================================================= */
+.footer {
+  background-color: #000 !important;
+  color: #fff !important;
+  padding: 5rem 0;
+}
+
+.footer p,
+.footer a,
+.footer i {
+  color: #fff !important;
+}
+
+.footer a:hover,
+.footer i:hover {
+  color: var(--primary) !important;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --text: #fff;
+    --text-muted: #ddd;
+    --nav-bg: #111;
+    --secondary: #bbb;
+    --border: #555;
+    /* --primary stays consistent */
+    --hover-darkness: 0.9; /* 10% darker for dark mode */
+  }
+
+  strong {
+    color: #fff;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  p,
+  .text-muted {
+    color: var(--text-muted) !important;
+  }
+
+  .navbar {
+    background-color: var(--nav-bg) !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  .nav-link {
+    color: #fff !important;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-link:hover {
+    color: var(--primary) !important;
+  }
+
+  .nav-link.active {
+    color: #fff !important;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .fa-brands {
+    color: #fff !important;
+  }
+  .fa-brands:hover {
+    color: var(--primary) !important;
+  }
+
+  .hero-title,
+  .section-title {
+    color: #fff;
+  }
+  .hero-subtitle,
+  .section-subtitle {
+    color: #ccc;
+  }
+
+  .nav-tabs .nav-link {
+    color: #bbb;
+    border-bottom: 2px solid transparent;
+    background-color: transparent !important;
+  }
+
+  .nav-tabs .nav-link:hover {
+    color: var(--primary) !important;
+    background-color: transparent !important;
+  }
+
+  .nav-tabs .nav-link.active {
+    color: #fff !important;
+    border-bottom: 2px solid var(--primary);
+    background-color: transparent !important;
+  }
+
+  .card,
+  .project-card {
+    background-color: #1a1a1a;
+    color: #fff;
+  }
+
+  .card-text {
+    color: #ccc !important;
+  }
+
+  .btn-primary i,
+  .btn-outline-secondary i {
+    color: inherit !important;
+  }
+
+  .btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+
+  .btn-primary:hover {
+    /* ✨ dark-mode hover nudge */
+    filter: brightness(var(--hover-darkness));
+  }
+
+  .btn-outline-secondary {
+    color: #ccc;
+    border-color: var(--border);
+    background-color: transparent;
+  }
+
+  .btn-outline-secondary:hover {
+    background-color: color-mix(in srgb, var(--secondary) 20%, rgb(0, 0, 0));
+    color: #fff;
+    border-color: color-mix(in srgb, var(--secondary) 90%, rgb(0, 0, 0));
+    filter: brightness(var(--hover-darkness));
+  }
+
+  .skill-name {
+    color: #fff !important;
+  }
+  .skill-card i {
+    color: #fff !important;
+  }
+  .skill-card:hover i {
+    color: var(--primary) !important;
+  }
+
+  .about-section p,
+  .about-section .about-text,
+  .about-section .section-subtitle {
+    color: #ddd !important;
+  }
+
+  .about-section strong {
+    color: #fff;
+  }
+
+  .footer {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .footer p,
+  .footer a,
+  .footer i {
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    margin-bottom: 1rem; /* add extra space below nav links */
+  }
+}
+#home,
+#about,
+#projects,
+#skills {
+  scroll-margin-top: 80px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Hero() {
   return (
-    <section className="hero-section d-flex align-items-center">
+    <section id="home" className="hero-section d-flex align-items-center">
       <div className="container">
         <h1 className="hero-title">
           Hi there! <br /> I’m Jonni
