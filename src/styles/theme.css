@@ -20,6 +20,10 @@
   --button-hover-secondary: var(--secondary);
   --hover-brightness: 1.1; /* 10% brighter for light mode */
 
+  /* Social icons (fixed visual identity, not accent-linked) */
+  --social-icon-primary: #000; /* Pure black in light mode */
+  --social-icon-secondary: #fff; /* Pure white in dark mode */
+
   /* Base surface + text */
   --bg: #fff;
   --text: #222;
@@ -79,6 +83,7 @@ p a,
 .section-subtitle a {
   color: var(--link-primary);
   text-decoration: none;
+  font-weight: 600;
   transition: color 0.3s ease;
 }
 
@@ -145,17 +150,19 @@ p a:hover,
 }
 
 .nav-link:hover {
+  font-weight: 700;
   color: var(--link-primary) !important;
   transform: translateY(-2px);
 }
 
 .nav-link.active {
-  color: var(--button-secondary) !important;
-  border-bottom: 2px solid var(--primary);
+  font-weight: 600;
+  color: var(--social-icon-primary) !important;
+  border-bottom: 4px solid var(--primary);
 }
 
 .fa-brands {
-  color: var(--button-secondary);
+  color: var(--social-icon-primary) !important;
   transition: color 0.3s ease, transform 0.2s ease;
 }
 
@@ -230,7 +237,7 @@ p a:hover,
 .section-title {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 1.3rem;
   color: #111;
 }
 
@@ -415,6 +422,38 @@ p a:hover,
   margin-top: 1rem;
 }
 
+.section-title {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #111;
+  padding-left: 1.1rem; /* room for the square */
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.36rem;
+  width: 6px;
+  height: 36px;
+  background-color: var(--primary);
+  border-radius: 2px; /* slightly rounded for smoothness */
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+    padding-left: 0.9rem;
+  }
+
+  .section-title::before {
+    height: 28px;
+    top: 0.3rem;
+  }
+}
+
 /* =========================================================
    FOOTER SECTION
 ========================================================= */
@@ -430,9 +469,11 @@ p a:hover,
   color: #fff !important;
 }
 
-.footer a:hover,
-.footer i:hover {
-  color: var(--primary) !important;
+.footer .fa-brands {
+  color: var(--social-icon-secondary) !important;
+}
+.footer .fa-brands:hover {
+  color: var(--social-icon-secondary) !important;
 }
 
 /* =========================================================
@@ -489,10 +530,10 @@ p a:hover,
   }
 
   .fa-brands {
-    color: #fff !important;
+    color: var(--social-icon-secondary) !important;
   }
   .fa-brands:hover {
-    color: var(--primary) !important;
+    color: var(--social-icon-secondary) !important;
   }
 
   .hero-title,
@@ -589,6 +630,13 @@ p a:hover,
   .footer a,
   .footer i {
     color: #fff !important;
+  }
+
+  .footer .fa-brands {
+    color: var(--social-icon-secondary) !important;
+  }
+  .footer .fa-brands:hover {
+    color: var(--social-icon-secondary) !important;
   }
 }
 
