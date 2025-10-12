@@ -3,11 +3,11 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
-// ✅ Bootstrap core (CSS + JS for collapse, tabs, modals, etc.)
+// Bootstrap core (CSS + JS for collapse, tabs, modals, etc.)
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-// ✅ Your global styles
+// Global styles
 import "./styles/theme.css";
 
 import App from "./App.jsx";

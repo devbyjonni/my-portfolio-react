@@ -1,0 +1,55 @@
+/* =========================================================
+   TOKENS — Global Theme Variables
+   Define once, used everywhere
+========================================================= */
+:root {
+  /* Brand & Accent */
+  --primary: #007aff; /* Main accent (links, hover, buttons) */
+  --secondary: #555; /* Neutral tone for secondary text/UI */
+
+  /* Derived accents */
+  --link-primary: var(--primary);
+  --link-secondary: var(--secondary);
+  --link-active-primary: #000000;
+  --link-active-secondary: #ffffff;
+
+  /* Buttons */
+  --button-primary: var(--primary);
+  --button-secondary: var(--secondary);
+  --button-hover-primary: var(--primary);
+  --button-hover-secondary: var(--secondary);
+  --hover-brightness: 1.1; /* 10% brighter in light mode */
+
+  /* Social icons */
+  --social-icon-primary: #000000;
+  --social-icon-secondary: #ffffff;
+
+  /*  Base colors */
+  --bg: #fff;
+  --text: #222;
+  --text-muted: #444;
+
+  /* UI structure */
+  --border: #ccc;
+  --nav-bg: var(--bg);
+
+  --card-bg-primary: #ffffff;
+  --card-bg-secondary: #1a1a1a;
+}
+
+/* =========================================================
+   DARK MODE TOKENS
+========================================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --text: #fff;
+    --text-muted: #ddd;
+    --nav-bg: #111;
+    --secondary: #bbb;
+    --border: #555;
+
+    /* --primary stays consistent */
+    --hover-darkness: 0.9; /* 10% darker for dark mode */
+  }
+}

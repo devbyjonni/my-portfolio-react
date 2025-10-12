@@ -10,9 +10,7 @@ function App() {
     <>
       <Header />
       <main>
-        {/* Enables smooth scrolling to in-page anchors (#about, #projects, etc.) */}
         <ScrollToHashElement />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/project" element={<ProjectDetail />} />

@@ -1,0 +1,208 @@
+/* =========================================================
+   SECTIONS
+   → Layout, hierarchy, and visual identity per section
+========================================================= */
+
+@import "./tokens.css";
+
+/* ---------------------------------------------------------
+   HERO SECTION
+--------------------------------------------------------- */
+.hero-section {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 0;
+  margin-top: -20px;
+}
+
+.hero-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1.1;
+  color: var(--text);
+  text-align: left;
+  margin-bottom: 20px;
+  max-width: 900px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--text-muted);
+  max-width: 800px;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   ABOUT SECTION
+--------------------------------------------------------- */
+.about-section {
+  background: none;
+}
+
+.about-image {
+  background-color: var(--card-bg-primary);
+  color: #aaa;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+}
+
+.about-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.about-text strong {
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------
+   PROJECTS SECTION
+--------------------------------------------------------- */
+.projects-section {
+  background-color: var(--card-bg-primary);
+}
+
+.section-title {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--text);
+  padding-left: 1.1rem; /* room for the blue bar */
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.36rem;
+  width: 6px;
+  height: 36px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  max-width: 700px;
+  color: var(--secondary);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+    padding-left: 0.9rem;
+  }
+
+  .section-title::before {
+    height: 28px;
+    top: 0.3rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   SKILLS SECTION
+--------------------------------------------------------- */
+.skills-section {
+  background: none;
+}
+
+.skill-card {
+  min-width: 120px;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-align: center;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+}
+
+.skill-name {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+.footer {
+  background-color: #000 !important;
+  color: #fff !important;
+  padding: 5rem 0;
+}
+
+.footer p,
+.footer a,
+.footer i {
+  color: #fff !important;
+}
+
+.footer .fa-brands {
+  color: var(--social-icon-secondary) !important;
+}
+
+.footer .fa-brands:hover {
+  color: var(--social-icon-secondary) !important;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+@media (prefers-color-scheme: dark) {
+  .section-subtitle,
+  .text-muted {
+    color: var(--text-muted) !important;
+  }
+  .projects-section {
+    background: none; /* keep transparent, page background handles tone */
+  }
+
+  .section-title {
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    color: var(--text-muted);
+  }
+
+  .project-card,
+  .card {
+    background-color: var(--card-bg-secondary);
+    color: var(--text);
+  }
+
+  .card-text {
+    color: var(--text-muted);
+  }
+}

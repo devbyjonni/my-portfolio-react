@@ -1,0 +1,137 @@
+/* =========================================================
+   BASE STYLES
+   → Global resets, typography, spacing, and layout
+========================================================= */
+
+@import "./tokens.css";
+
+/* ---------------------------------------------------------
+   1. Base element reset
+--------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  overflow-x: hidden;
+}
+
+/* ---------------------------------------------------------
+   2. Typography
+--------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 0.75em;
+  line-height: 1.2;
+}
+
+strong {
+  color: #000;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1.25em;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------
+   3. Links
+--------------------------------------------------------- */
+a {
+  color: var(--link-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: color-mix(in srgb, var(--link-primary) 80%, #000);
+  text-decoration: underline;
+}
+
+/* Scoped link styling in text blocks */
+p a,
+.about-text a,
+.section-subtitle a {
+  font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  a:hover {
+    color: color-mix(in srgb, var(--link-primary) 70%, #fff);
+  }
+}
+
+/* ---------------------------------------------------------
+   4. Container utility
+--------------------------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------------------------------------------------------
+   5. Section scroll offset (for anchored navigation)
+--------------------------------------------------------- */
+#home,
+#about,
+#projects,
+#skills {
+  scroll-margin-top: 80px;
+}
+
+/* ---------------------------------------------------------
+   SOCIAL ICONS
+--------------------------------------------------------- */
+/* Unified & Safari-flicker-safe */
+.fa-brands {
+  display: inline-block;
+  color: var(--social-icon-primary) !important;
+  transition: transform 0.25s ease, color 0.25s ease;
+  transform: translateZ(0); /* promote to GPU layer */
+  will-change: transform, color; /* persistent compositing */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  contain: paint; /* prevents ancestor repaints */
+}
+
+.fa-brands,
+.fa-solid {
+  color: var(--social-icon-primary);
+}
+
+.fa-brands:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+@media (prefers-color-scheme: dark) {
+  .fa-brands,
+  .fa-solid {
+    color: var(--social-icon-secondary) !important;
+  }
+  strong {
+    color: #fff;
+  }
+}
